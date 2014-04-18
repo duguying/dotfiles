@@ -1,0 +1,11 @@
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	ui = true
+[user]
+	name = Rex Lee(李俊)
+	email = duguying2008@gmail.com
+[credential]    
+	helper = store
