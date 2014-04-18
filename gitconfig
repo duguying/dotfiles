@@ -9,3 +9,5 @@
 	email = duguying2008@gmail.com
 [credential]    
 	helper = store
+[core]
+	editor=vim
