@@ -9,7 +9,9 @@ Bundle 'The-NERD-tree'
 Bundle 'molokai'
 Bundle 'Align'
 Bundle 'bling/vim-airline'
+Bundle 'majutsushi/tagbar'
 
+set encoding=utf-8
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -26,7 +28,18 @@ syntax on
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols = {}
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
+set guifont=Consolas\ for\ Powerline\ FixedD:h11
+let g:Powerline_symbols = 'fancy' 
 set laststatus=2
 
