@@ -1,0 +1,17 @@
+#!/bin/sh 
+
+if [ yum ]; then
+	INSTALLER=yum
+else
+	INSTALLER=apt-get
+fi
+
+sudo $INSTALLER install vim
+sudo $INSTALLER install git
+sudo $INSTALLER install gcc
+
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+cp ./gitconfig ~/.gitconfig 
+cp ./vimrc ~/.vimrc 
+
