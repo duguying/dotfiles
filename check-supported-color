@@ -1,0 +1,4 @@
+for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2|tail -n20
+
+# 然后在.bashrc中加入例如 export TERM=screen-256color
+
