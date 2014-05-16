@@ -7,9 +7,11 @@ Bundle 'gmarik/vundle'
 Bundle 'AutoComplPop'
 Bundle 'The-NERD-tree'
 Bundle 'molokai'
-Bundle 'Align'
 Bundle 'bling/vim-airline'
-Bundle 'majutsushi/tagbar'
+Bundle 'bling/vim-bufferline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
 
 set encoding=utf-8
 set tabstop=4
@@ -37,8 +39,8 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
-let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '⮀'
 set guifont=Consolas\ for\ Powerline\ FixedD:h11
 let g:Powerline_symbols = 'fancy' 
 set laststatus=2

@@ -11,6 +11,7 @@ sudo $INSTALLER install git
 sudo $INSTALLER install gcc
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/eugeneching/consolas-powerline-vim.git ~/.fonts
 
 cp ./gitconfig ~/.gitconfig 
 cp ./vimrc ~/.vimrc 
