@@ -1,0 +1,106 @@
+set nocompatible " be iMproved
+filetype off " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'AutoComplPop'
+Bundle 'The-NERD-tree'
+Bundle 'molokai'
+Bundle 'bling/vim-airline'
+Bundle 'bling/vim-bufferline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+
+set encoding=utf-8
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set cindent
+set nu
+set mouse=a
+set hlsearch
+set backspace=2
+set t_Co=256
+colorscheme molokai
+syntax on
+
+"set <HOME> and <END> key
+nmap <silent><Home> :call SmartHome("n")<CR>
+nmap <silent><End> :call SmartEnd("n")<CR>
+imap <silent><Home> <C-r>=SmartHome("i")<CR>
+imap <silent><End> <C-r>=SmartEnd("i")<CR>
+vmap <silent><Home> <Esc>:call SmartHome("v")<CR>
+vmap <silent><End> <Esc>:call SmartEnd("v")<CR>
+
+function SmartHome(mode)
+	let curcol = col(".")
+	"gravitate towards beginning for wrapped lines
+	if curcol > indent(".") + 2
+		call cursor(0, curcol - 1)
+	endif
+	if curcol == 1 || curcol > indent(".") + 1
+		if &wrap
+			normal g^
+		else
+			normal ^
+		endif
+	else
+		if &wrap
+			normal g0
+		else
+			normal 0
+		endif
+	endif
+	if a:mode == "v"
+		normal msgv`s
+	endif
+	return ""
+endfunction
+
+function SmartEnd(mode)
+	let curcol = col(".")
+	let lastcol = a:mode == "i" ? col("$") : col("$") - 1
+	"gravitate towards ending for wrapped lines
+	if curcol < lastcol - 1
+	    call cursor(0, curcol + 1)
+	endif
+	if curcol < lastcol
+		if &wrap
+			normal g$
+		else
+			normal $
+		endif
+	else
+		normal g_
+	endif
+	"correct edit mode cursor position, put after current character
+	if a:mode == "i"
+		call cursor(0, col(".") + 1)
+	endif
+	if a:mode == "v"
+		normal msgv`s
+	endif
+	return ""
+endfunction
+
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
+
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols = {}
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '⮀'
+set guifont=Consolas\ for\ Powerline\ FixedD:h11
+let g:Powerline_symbols = 'fancy' 
+set laststatus=2
+
