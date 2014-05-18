@@ -15,4 +15,7 @@ git clone https://github.com/eugeneching/consolas-powerline-vim.git ~/.fonts
 
 cp ./gitconfig ~/.gitconfig 
 cp ./vimrc ~/.vimrc 
+cp ./tmux.conf ~/.tmux.conf
+
+# 想要使用tmux, 必须自己事先安装
 
