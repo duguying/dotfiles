@@ -1,0 +1,4 @@
+TERM=screen-256color
+# 为tmux天气显示所作的地理位置配置[荆州]
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2163868"
+
