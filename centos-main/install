@@ -10,6 +10,10 @@ sudo $INSTALLER install vim
 sudo $INSTALLER install git
 sudo $INSTALLER install gcc
 
+wget https://github.com/erikw/tmux-powerline/archive/master.zip -O tmux-powerline.zip
+unzip tmux-powerline.zip
+rm tmux-powerline.zip
+mv ./tmux-powerline-master /usr/local/tmux-powerline
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone https://github.com/eugeneching/consolas-powerline-vim.git ~/.fonts
 
