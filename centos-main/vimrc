@@ -12,6 +12,7 @@ Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'json.vim'
 
 set encoding=utf-8
 set tabstop=2
@@ -31,6 +32,40 @@ syntax on
 map <F3> :NERDTreeMirror<CR>
 map <F3> :NERDTreeToggle<CR>
 
+"新建.c,.h,.sh,.java文件，自动插入文件头 
+autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()" 
+autocmd BufNewFile * normal G
+
+func SetTitle() 
+  if &filetype == 'sh' 
+    call setline(1,"\#########################################################################")
+    call append(line("."), "\# File Name: ".expand("%")) 
+    call append(line(".")+1, "\# Author: rex") 
+    call append(line(".")+2, "\# mail: duguying2008@gmail.com") 
+    call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
+    call append(line(".")+4, "\#########################################################################") 
+    call append(line(".")+5, "\#!/bin/bash") 
+    call append(line(".")+6, "") 
+  else 
+    call setline(1, "/**") 
+    call append(line("."), " * File Name: ".expand("%")) 
+    call append(line(".")+1, " * Author: rex") 
+    call append(line(".")+2, " * Mail: duguying2008@gmail.com ") 
+    call append(line(".")+3, " * Created Time: ".strftime("%c")) 
+    call append(line(".")+4, " **/") 
+    call append(line(".")+5, "")
+  endif
+  if &filetype == 'cpp'
+    call append(line(".")+6, "#include <iostream>")
+    call append(line(".")+7, "using namespace std;")
+    call append(line(".")+8, "")
+  endif
+  if &filetype == 'c'
+    call append(line(".")+6, "#include <stdio.h>")
+    call append(line(".")+7, "")
+  endif
+endfunc 
+
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
@@ -40,7 +75,7 @@ let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '⮀'
 set guifont=Consolas\ for\ Powerline\ FixedD:h11
 let g:Powerline_symbols = 'fancy' 
