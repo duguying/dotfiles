@@ -1,0 +1,28 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+export TERM='screen-256color'
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2163868"
+
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf   "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf   "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf   "\e[0m") \
+    LESS_TERMCAP_se=$(printf   "\e[0m") \
+    LESS_TERMCAP_so=$(printf   "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf   "\e[0m") \
+    LESS_TERMCAP_us=$(printf   "\e[1;32m") \
+    man "$@"
+}
+
