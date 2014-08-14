@@ -12,7 +12,8 @@ Bundle 'bling/vim-bufferline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'json.vim'
+Bundle 'elzr/vim-json'
+Bundle 'cespare/vim-golang'
 
 set encoding=utf-8
 set tabstop=2
