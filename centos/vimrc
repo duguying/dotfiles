@@ -66,3 +66,11 @@ func SetTitle()
   endif
 endfunc 
 
+func FormatC()
+  silent !indent -npro -kr -i8 -ts8 -sob -l80 -ss -ncs -cp1 %
+  edit
+  syntax enable
+endfunc
+
+au BufWritePost *.c :call FormatC()
+
