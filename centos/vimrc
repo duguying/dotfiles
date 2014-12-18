@@ -15,9 +15,9 @@ Bundle 'elzr/vim-json'
 Bundle 'fatih/vim-go'
 
 set encoding=utf-8
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set cindent
 set expandtab
@@ -67,7 +67,7 @@ func SetTitle()
 endfunc 
 
 func FormatC()
-  silent !indent -npro -kr -i8 -ts8 -sob -l80 -ss -ncs -cp1 %
+  silent !indent -npro -kr -i4 -ts4 -sob -l80 -ss -ncs -cp1 %
   silent !rm -f %~
   edit
   syntax enable
