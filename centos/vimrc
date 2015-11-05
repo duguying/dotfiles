@@ -13,6 +13,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'elzr/vim-json'
 Bundle 'fatih/vim-go'
+Bundle 'Tagbar'
 
 set encoding=utf-8
 set tabstop=4
@@ -74,4 +75,20 @@ func FormatC()
 endfunc
 
 au BufWritePost *.c :call FormatC()
+
+" Tagbar
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+nmap <F6> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+    \ 'ctagstype': 'go',
+    \ 'kinds' : [
+        \ 'p:package',
+        \ 'f:function',
+        \ 'v:variables',
+        \ 't:type',
+        \ 'c:const'
+    \]
+\}
 
