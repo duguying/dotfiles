@@ -2,20 +2,16 @@
 
 INSTALLER=yum
 
+sudo $INSTALLER install git
 sudo $INSTALLER install vim
 sudo $INSTALLER install curl
 sudo $INSTALLER install gcc
 
-wget https://github.com/erikw/tmux-powerline/archive/master.zip -O tmux-powerline.zip
-unzip tmux-powerline.zip
-rm tmux-powerline.zip
-mv ./tmux-powerline-master /usr/local/tmux-powerline
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone https://github.com/eugeneching/consolas-powerline-vim.git ~/.fonts
 
 cp ./gitconfig ~/.gitconfig 
 cp ./vimrc ~/.vimrc 
-cp ./tmux.conf ~/.tmux.conf
 
 # 想要使用tmux, 必须自己事先安装
 
