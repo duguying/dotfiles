@@ -1,53 +1,53 @@
 duguying.net:80 {
-    log ./duguying.net.log
+    log ./log/duguying.net.log
 
     proxy / 127.0.0.1:81
 }
 
 drone.duguying.net {
-	log ./drone.duguying.net
+	log ./log/drone.duguying.net
 
 	proxy / 127.0.0.1:8000
 }
 
 git.duguying.net {
-	log ./git.duguying.net
+	log ./log/git.duguying.net
 
 	proxy / 127.0.0.1:3000
 }
 
 parsing-techniques.duguying.net {
-	log ./parsing-techniques.duguying.net
+	log ./log/parsing-techniques.duguying.net
 
 	proxy / 127.0.0.1:4000
 }
 
 yfalert.duguying.net {
-	log ./yfalert.duguying.net
+	log ./log/yfalert.duguying.net
 
 	proxy / 127.0.0.1:5072
 }
 
 prom.duguying.net {
-	log ./prom.duguying.net
+	log ./log/prom.duguying.net
 
 	proxy / 127.0.0.1:9090
 }
 
 grafana.duguying.net {
-	log ./grafana.duguying.net
+	log ./log/grafana.duguying.net
 
 	proxy / 127.0.0.1:3003
 }
 
 elapen.duguying.net {
-	log ./elapen.duguying.net
+	log ./log/elapen.duguying.net
 
 	proxy / 127.0.0.1:4010
 }
 
 genshot.duguying.net {
-	log ./genshot.duguying.net
+	log ./log/genshot.duguying.net
 
 	proxy / 127.0.0.1:9000
 }
