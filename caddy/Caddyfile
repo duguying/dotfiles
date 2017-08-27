@@ -1,4 +1,4 @@
-duguying.net:80 {
+duguying.net {
     log ./log/duguying.net.log
 
     proxy / 127.0.0.1:81
